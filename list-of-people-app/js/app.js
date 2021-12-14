@@ -11,3 +11,18 @@ function displayPeople(){
     }
     document.getElementById('people').innerHTML = fullnames;
 }
+
+function addPerson(){
+    const form = document.forms['forma'];
+    const name = form['name'];
+    const lastname = form['lastname'];
+    if(name.value != '' && lastname != ''){
+        const person = new Person(name.value,lastname.value);
+    people.push(person);
+    displayPeople();
+    }
+    else{
+        alert('No information to add')
+    }
+    
+}
