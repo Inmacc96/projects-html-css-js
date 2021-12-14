@@ -13,9 +13,26 @@
     <title>Calculator Application</title>
   </head>
   <body>
-      <div class='container'>
-          <h1>Calculator Application</h1>
-      </div>
+    <div class="container">
+      <h1>Calculator Application</h1>
+      <form id="forma">
+        <div class="mb-3">
+          <!-- Es mejor usar la clase con un margin bottom que usar la etiqueta br despues -->
+          <label for="operandA">Operand A</label>
+          <input
+            type="number"
+            class="form-control"
+            placeholder="Write operand A"
+            id="operandA"
+          />
+        </div>
+        <div class="mb-3">
+          <label for="operandB">Operand B</label>
+          <input type="number" class="form-control" placeholder="Write operand B" id="operandB" />
+        </div>
+      </form>
+      <button class="btn btn-primary mb-3" onclick="sum()">Sum</button>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
