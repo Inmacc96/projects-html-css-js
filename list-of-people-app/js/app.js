@@ -26,3 +26,13 @@ function addPerson(){
     }
     
 }
+
+function removePerson(){
+    if(people.length != 0){
+    people.pop();
+    displayPeople();
+    }
+    else{
+        alert('No persons on the list')
+    }
+}
