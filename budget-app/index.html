@@ -7,23 +7,23 @@
     <title>Budget App</title>
     <link href="/css/styles.css" rel="stylesheet" />
   </head>
-  <body>
+  <body onload="loadApp()">
     <div class="header">
       <div class="budget">
         <div class="budget_title">Available Budget</div>
-        <div class="budget_value">+ 2,000.000</div>
+        <div class="budget_value" id='budget_total'>+ 2,000.000</div>
         <div class="budget_income cleanStyles">
           <div class="budget_income--text">Revenues</div>
           <div class="right">
-            <div class="budget_income--value">+4,000.000</div>
+            <div class="budget_income--value" id="income">+4,000.000</div>
             <div class="budget_income--percentage">&nbsp;</div>
           </div>
         </div>
         <div class="budget_expenditure cleanStyles">
           <div class="budget_expenditure--text">Expenditures</div>
           <div class="right cleanStyles">
-            <div class="budget_expenditure--value">- 1,900.000</div>
-            <div class="budget_expenditure--percentage">45%</div>
+            <div class="budget_expenditure--value" id="expenditure">- 1,900.000</div>
+            <div class="budget_expenditure--percentage" id="percentage">45%</div>
           </div>
         </div>
       </div>
