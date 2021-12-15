@@ -14,8 +14,7 @@ const showClock = () => {
     let dateText = `${dayWeek}, ${day} ${month} ${year}`;
     document.getElementById('date').innerHTML = dateText;
     
-
-    
+    document.getElementById('container').classList.toggle('animate'); 
 }
 
 const formatTime = (time) => {
