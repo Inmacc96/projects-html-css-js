@@ -97,8 +97,8 @@ body {
   float: left;
 }
 
-.budget_income-percentage,
-.budget_expenditure-percentage {
+.budget_income--percentage,
+.budget_expenditure--percentage {
   float: left;
   width: 34px;
   font-size: 11px;
@@ -106,7 +106,7 @@ body {
   margin-left: 10px;
 }
 
-.budget_expenditure-percentage {
+.budget_expenditure--percentage {
   background-color: rgba(255, 255, 255, 0.2);
   text-align: center;
   border-radius: 3px;
@@ -123,7 +123,7 @@ body {
   text-align: center;
 }
 
-.add_tipo {
+.add_type {
   width: 55px;
   border: 1px solid #e7e7e7;
   height: 44px;
