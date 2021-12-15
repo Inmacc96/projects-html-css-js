@@ -25,4 +25,11 @@ let totalExpenditures = () => {
     return totalExpenditures;
 };
 
-
+let loadHeader = () => {
+    let budget = totalIncome() - totalExpenditures();
+    let percentage = totalExpenditures()/totalIncome();
+    document.getElementById('budget_total').innerHTML = budget;
+    document.getElementById('percentage').innerHTML = percentage;
+    document.getElementById('income').innerHTML = totalIncome();
+    document.getElementById('expenditure').innerHTML = totalExpenditures();
+  };
