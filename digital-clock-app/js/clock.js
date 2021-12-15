@@ -14,7 +14,12 @@ const showClock = () => {
     let dateText = `${dayWeek}, ${day} ${month} ${year}`;
     document.getElementById('date').innerHTML = dateText;
     
-    document.getElementById('container').classList.toggle('animate'); 
+    document.getElementById('container').classList.toggle('animate');
+    /* 
+    classList: se trae todos los estilos que se ha aplicado a ese elemento
+    toggle: Si está aplicado el estilo, lo quita, y viceversa. Esto
+    lo hace una vez sí, una vez no */
+    
 }
 
 const formatTime = (time) => {
