@@ -33,21 +33,48 @@
       </div>
     </div>
 
+    <form id="form" onsubmit="return false;">
+      <!-- onsubmit = "return false;" : Para que no se haga el envio del
+      formulario al servidor sino que unicamente se procese el método addData()
+       -->
+      <div class="add">
+        <div class="add_container">
+          <select class="add_type" id="type">
+            <option value="income" selected>+</option>
+            <option value="expenditure">-</option>
+          </select>
+          <input
+            type="text"
+            class="add_description"
+            placeholder="Add description"
+            id="description"
+          />
+          <input
+            type="number"
+            class="add_value"
+            placeholder="Value"
+            id="value"
+            step="any"
+          />
+          <button class="add_btn" onclick="addData()">
+            <ion-icon name="checkmark-circle-outline"></ion-icon>
+          </button>
+        </div>
+      </div>
+    </form>
+
     <div class="container cleanStyles">
       <div class="income">
         <h2 class="income_title">Revenues</h2>
-        <div id="list-revenues">
-        </div>
+        <div id="list-revenues"></div>
       </div>
 
       <div class="expenditure">
         <h2 class="expenditure_title">Expenditures</h2>
-        <div id="list-expenditures">
-        </div>
+        <div id="list-expenditures"></div>
       </div>
     </div>
 
-    
     <script src="/js/Data.js"></script>
     <script src="/js/Income.js"></script>
     <script src="/js/Expenditure.js"></script>
