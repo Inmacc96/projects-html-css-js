@@ -70,7 +70,8 @@ const createIncomeHTML = (income) => {
         <div class="element_value">+ ${formatCurrency(income.value)}</div>
         <div class="element_remove">
             <button class="element_remove--btn">
-              <ion-icon name="close-circle-outline"></ion-icon>
+              <ion-icon name="close-circle-outline"
+              onclick='removeIncome(${income.id})'></ion-icon>
             </button>
         </div>
       </div>
@@ -78,6 +79,14 @@ const createIncomeHTML = (income) => {
     `;
   return incomeHTML;
 };
+
+const removeIncome = (id) => {
+  let indexRemove = revenues.findIndex(income => income.id == id);
+  revenues.splice(indexRemove,1); // Elimina un solo elemento a partir del indice indexRemove
+  loadHeader();
+  loadRevenues();
+}
+
 
 const loadExpenditures = () => {
   let expendituresHTML = "";
