@@ -28,8 +28,17 @@ let totalExpenditures = () => {
 let loadHeader = () => {
     let budget = totalIncome() - totalExpenditures();
     let percentage = totalExpenditures()/totalIncome();
-    document.getElementById('budget_total').innerHTML = budget;
-    document.getElementById('percentage').innerHTML = percentage;
-    document.getElementById('income').innerHTML = totalIncome();
-    document.getElementById('expenditure').innerHTML = totalExpenditures();
+    document.getElementById('budget_total').innerHTML = formatCurrency(budget);
+    document.getElementById('percentage').innerHTML = formatPercentage(percentage);
+    document.getElementById('income').innerHTML = formatCurrency(totalIncome());
+    document.getElementById('expenditure').innerHTML = formatCurrency(totalExpenditures());
   };
+
+  const formatCurrency = (value) => {
+    return value.toLocaleString('en-US',{style:'currency', currency:'USD', minimumFractionDigits: 2});
+  }
+
+  const formatPercentage = (value) => {
+    return value.toLocaleString('en-US',{style:'percent', minimumFractionDigits:2})
+  }
+
