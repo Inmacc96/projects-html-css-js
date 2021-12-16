@@ -1,13 +1,14 @@
-const revenues = [new Income("Salary", 2100.00), new Income("Sale car", 1500)];
+const revenues = [new Income("Salary", 2100.0), new Income("Sale car", 1500)];
 
 const expenditures = [
   new Expenditure("Rent flat", 900),
-  new Expenditure("Clothing", 400),
+  new Expenditure("Clothing", 500),
 ];
 
 let loadApp = () => {
   loadHeader();
   loadRevenues();
+  loadExpenditures();
 };
 
 let totalIncome = () => {
@@ -64,16 +65,43 @@ const loadRevenues = () => {
 const createIncomeHTML = (income) => {
   let incomeHTML = `
     <div class="element cleanStyles">
-        <div class="element_description">${income.description}</div>
-          <div class="right cleanStyles">
-            <div class="element_value">${formatCurrency(income.value)}</div>
-            <div class="element_remove">
-                <button class="element_remove--btn">
-                  <ion-icon name="close-circle-outline"></ion-icon>
-                </button>
-            </div>
+      <div class="element_description">${income.description}</div>
+      <div class="right cleanStyles">
+        <div class="element_value">+ ${formatCurrency(income.value)}</div>
+        <div class="element_remove">
+            <button class="element_remove--btn">
+              <ion-icon name="close-circle-outline"></ion-icon>
+            </button>
         </div>
       </div>
+    </div>
     `;
   return incomeHTML;
+};
+
+const loadExpenditures = () => {
+  let expendituresHTML = "";
+  for (let expenditure of expenditures) {
+    expendituresHTML += createExpenditureHTML(expenditure);
+  }
+  document.getElementById("list-expenditures").innerHTML = expendituresHTML;
+};
+
+const createExpenditureHTML = (expenditure) => {
+  let percentage = expenditure.value / totalExpenditures();
+  let expenditureHTML = `
+    <div class="element cleanStyles">
+      <div class="element_description">${expenditure.description}</div>
+      <div class="right cleanStyles">
+        <div class="element_value">- ${formatCurrency(expenditure.value)}</div>
+        <div class="element_percentage">${formatPercentage(percentage)}</div>
+        <div class="element_remove">
+          <buttom class="element_remove--btn">
+          <ion-icon name="close-circle-outline"></ion-icon>
+          </buttom>
+        </div>
+      </div>
+    </div>  
+  `;
+  return expenditureHTML;
 };
