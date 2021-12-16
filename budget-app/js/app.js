@@ -122,3 +122,22 @@ const removeExpenditure = (id) => {
   loadHeader();
   loadExpenditures();
 }
+
+let addData = () => {
+  let form = document.forms['form'];
+  let type = form['type'];
+  let description = form['description'];
+  let value = form['value'];
+  if(description.value !== '' && value.value !== ''){
+    if(type.value === 'income'){
+      revenues.push(new Income(description.value,+value.value)); //El + convierte la cadena a un valor numérico. Idem Number()
+      loadHeader();
+      loadRevenues();
+    }
+    else if(type.value == 'expenditure'){
+      expenditures.push(new Expenditure(description.value,+value.value));
+      loadHeader();
+      loadExpenditures();
+    }
+  }
+}
