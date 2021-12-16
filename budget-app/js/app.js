@@ -106,7 +106,8 @@ const createExpenditureHTML = (expenditure) => {
         <div class="element_percentage">${formatPercentage(percentage)}</div>
         <div class="element_remove">
           <buttom class="element_remove--btn">
-          <ion-icon name="close-circle-outline"></ion-icon>
+          <ion-icon name="close-circle-outline"
+          onclick='removeExpenditure(${expenditure.id})'></ion-icon>
           </buttom>
         </div>
       </div>
@@ -114,3 +115,10 @@ const createExpenditureHTML = (expenditure) => {
   `;
   return expenditureHTML;
 };
+
+const removeExpenditure = (id) => {
+  let indexExpenditure = expenditures.findIndex(expenditure => expenditure.id == id);
+  expenditures.splice(indexExpenditure,1);
+  loadHeader();
+  loadExpenditures();
+}
