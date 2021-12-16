@@ -250,9 +250,9 @@ h2 {
   color: #28b9b5;
 }
 
-.expenditure .elemento_valor,
-.expenditure .elemento_percentage,
-.expenditure .elemento_remove--btn {
+.expenditure .element_value,
+.expenditure .element_percentage,
+.expenditure .element_remove--btn {
   color: #ff5049;
 }
 
